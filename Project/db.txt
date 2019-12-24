@@ -1,0 +1,75 @@
+CREATE DATABASE loan;
+
+CREATE TABLE customer (
+  id Int(4) PRIMARY KEY AUTO_INCREMENT,
+  FirstName VARCHAR(20),
+  LastName VARCHAR(20),
+  SurName VARCHAR(25),
+  bday DATE,
+  gender VARCHAR(12),
+  country VARCHAR(20),
+  state VARCHAR(20),
+  district VARCHAR(30),
+  address VARCHAR(25),
+  email VARCHAR(30),
+  phone VARCHAR(20),
+  loan VARCHAR(20),
+  pan VARCHAR(20)
+  
+);
+
+INSERT INTO `loan`.`customer` (`id`, `FirstName`, `LastName`, `SurName`, `bday`, `gender`, `country`, `state`, `district`, `address`, `email`, `phone`, `loan`, `pan`) VALUES (NULL, 'kannan', '', 'jegadeesh', '1990-10-14', 'male', 'India', 'Tamilnadu', 'Coimbatore', '17 Manika nagar', 'kannan@gmail.com', '9876000202', 'Vehicle', 'AZSXDC');
+INSERT INTO `loan`.`customer` (`id`, `FirstName`, `LastName`, `SurName`, `bday`, `gender`, `country`, `state`, `district`, `address`, `email`, `phone`, `loan`, `pan`) VALUES (NULL, 'kesavan', '', 'subash', '1979-12-04', 'male', 'India', 'Tamilnadu', 'Coimbatore', '18 Manika nagar', 'kesavan@gmail.com', '9876000203', 'Business', 'QAZWSX');
+INSERT INTO `loan`.`customer` (`id`, `FirstName`, `LastName`, `SurName`, `bday`, `gender`, `country`, `state`, `district`, `address`, `email`, `phone`, `loan`, `pan`) VALUES (NULL, 'Murali', 'krishnan', 'baalu', '1992-04-11', 'male', 'India', 'Tamilnadu', 'Coimbatore', '19 Manika nagar', 'Murali@gmail.com', '9876000204', 'Gold', 'EDCRFV');
+INSERT INTO `loan`.`customer` (`id`, `FirstName`, `LastName`, `SurName`, `bday`, `gender`, `country`, `state`, `district`, `address`, `email`, `phone`, `loan`, `pan`) VALUES (NULL, 'Deepak', 'kumar', 'murugan', '1989-03-14', 'male', 'India', 'Tamilnadu', 'Coimbatore', '20 Manika nagar', 'Deepak@gmail.com', '9876000205', 'Education', 'TGBYHN');
+
+CREATE TABLE banker (
+  id int(2) PRIMARY KEY,
+  username VARCHAR(20),
+  password VARCHAR(20)
+  );
+
+INSERT INTO `loan`.`banker` (`id`, `username`, `password`) VALUES ('1', 'banker', 'banker');
+
+
+CREATE TABLE customer_login (
+  id Int(4) PRIMARY KEY AUTO_INCREMENT,
+  FirstName VARCHAR(20),
+  LastName VARCHAR(20),
+  SurName VARCHAR(25),
+  bday DATE,
+  gender VARCHAR(12),
+  country VARCHAR(20),
+  state VARCHAR(20),
+  district VARCHAR(30),
+  address VARCHAR(25),
+  email VARCHAR(30),
+  phone VARCHAR(20),
+  loan VARCHAR(20),
+  pan VARCHAR(20),
+  password VARCHAR(20)
+);
+
+CREATE TABLE documents(
+  id Int(4) PRIMARY KEY AUTO_INCREMENT,
+  ac_no VARCHAR(20),
+  ac_name VARCHAR(20),
+  ac_branch VARCHAR(25),
+  cus_id Int(4),
+  amount_needed VARCHAR(20),
+  income_no VARCHAR(20),
+  birth_no VARCHAR(25),
+  aadhar_no VARCHAR(20),
+  path VARCHAR(50),
+  accept VARCHAR(10),
+  percentage VARCHAR(5),
+  bankerresult VARCHAR(20)
+);
+
+CREATE TABLE Policies(
+  path VARCHAR(30)
+);
+
+INSERT INTO `loan`.`policies` (`path`) VALUES ('documents/Terms.pdf');
+
+
